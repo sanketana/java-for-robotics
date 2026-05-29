@@ -14,18 +14,27 @@ This is not a "learn to code" course. It is a course for students who already th
 
 ## What the student will build
 
-The course follows a four-stage progression:
+The course is organised into four tiers, taught over 24 sessions:
 
-**Stage 1 — Reading and writing Java (Sessions 1–4)**
+| Tier | Sessions | Focus |
+|------|----------|-------|
+| **Tier 1 — Syntax** | 1–5 | Translating familiar Scratch logic into Java text: printing and reading errors, variables and types, user input, conditionals, loops, and writing your own methods |
+| **Tier 2 — Mental Model** | 6–11 | Where Java starts to think differently: method parameters and return values, `int` vs `double`, boolean logic, the `null` concept, and reading error messages and stack traces |
+| **Tier 3 — Objects** | 12–18 | Object-oriented programming through robotics: classes and objects, instance fields, `public`/`private`, and building mechanisms by composition |
+| **Tier 4 — FTC SDK** | 19–24 | The official FTC software: OpModes, annotations, the `hardwareMap`, `enum`/`switch` state machines, and the final TeleOp + autonomous project |
+
+Each tier in more depth:
+
+**Tier 1 — Syntax: reading and writing Java (Sessions 1–5)**
 Students translate familiar Scratch logic into Java syntax. They write programs that use variables, conditionals, loops, and methods — the same ideas they already know, now expressed in text. By the end of this stage, a student can read a short Java program and predict what it does.
 
-**Stage 2 — Thinking in Java (Sessions 5–10)**
+**Tier 2 — Mental Model: thinking in Java (Sessions 6–11)**
 Students encounter the ideas that make Java genuinely different from Scratch: typed return values, null references, boolean logic, and error messages as a tool rather than a threat. They learn to read a stack trace the way a mechanic reads a diagnostic — calmly, systematically. Debugging becomes a habit, not a crisis.
 
-**Stage 3 — Objects and structure (Sessions 11–18)**
+**Tier 3 — Objects and structure (Sessions 12–18)**
 Students learn object-oriented programming through the lens of robotics. A motor is an object. A drivetrain is an object that contains motors. A robot is an object that contains a drivetrain, an arm, and a claw. They build these structures themselves, experiencing firsthand why organisation matters as code grows.
 
-**Stage 4 — The FTC SDK (Sessions 19–24)**
+**Tier 4 — The FTC SDK (Sessions 19–24)**
 Students apply everything they have learned inside the official FIRST Tech Challenge software development kit. They write TeleOp programs (driver-controlled), autonomous routines (robot acts alone), and state machines (the robot makes decisions). The code they write in this stage is the same code that runs on competition robots.
 
 ## The final project
