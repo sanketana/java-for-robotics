@@ -119,3 +119,39 @@ Average: 80.5
 ```
 
 The lesson in Bug 3: the most dangerous bugs don't announce themselves. The compiler caught the two type-mismatch slips, but it had no way to know you *meant* `0.25` when you wrote `1 / 4`. Reading your own output critically is part of the job.
+
+## Stretch Project — Sample Solution
+
+Try it yourself first. `SpeedCalculator.java`:
+
+```java
+public class SpeedCalculator {
+    public static void main(String[] args) {
+        System.out.println("Speed (100 cm in 8 s): " + speed(100, 8) + " cm/s");
+        System.out.println("Gear ratio (60 : 20): " + gearRatio(60, 20));
+        System.out.println("Average lap (31, 34, 30): " + averageLap(31, 34, 30) + " s");
+    }
+
+    public static double speed(int distance, int seconds) {
+        return distance / (double) seconds;
+    }
+
+    public static double gearRatio(int drivenTeeth, int driverTeeth) {
+        return drivenTeeth / (double) driverTeeth;
+    }
+
+    public static double averageLap(int lap1, int lap2, int lap3) {
+        return (lap1 + lap2 + lap3) / 3.0;
+    }
+}
+```
+
+Output:
+
+```
+Speed (100 cm in 8 s): 12.5 cm/s
+Gear ratio (60 : 20): 3.0
+Average lap (31, 34, 30): 31.666666666666668 s
+```
+
+Every method divides `int` inputs, so every one needed protecting: `speed` and `gearRatio` cast one side with `(double)`, and `averageLap` divides by `3.0`. Drop the `(double)` or the `.0` from any of them and that line collapses to whole-number maths — `12.5` would become `12`. (The long tail on the lap average is normal: doubles are very precise, but not perfectly exact.)

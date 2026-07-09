@@ -125,6 +125,24 @@ Write your answers:
 2. In `StatusReport`, why is it better to have the divider in one method than copied three times?
 3. Where else in your past programs did you repeat lines that a custom block could have replaced?
 
+## Stretch Project (Optional)
+
+Done refactoring `StatusReport` with time left? Build a bigger program made entirely of custom blocks — no parameters yet, just today's `public static void` methods and a `main` that reads like a table of contents.
+
+**Robot Dashboard.** Write a new program, `RobotDashboard.java`, whose `main` is just a list of calls:
+
+```java
+printHeader();
+printBatteryStatus();
+printMotorStatus();
+printSensorStatus();
+printFooter();
+```
+
+Each method prints one part of a tidy status screen. Write a `printDivider()` method for the repeated line of dashes and call it from inside `printHeader()` and `printFooter()` — a method calling another method, exactly like `StartupSequence`. Aim for output that looks like a real dashboard.
+
+A worked version is in `solutions.md` — try it yourself first.
+
 ## Starter Materials
 
 These files are in this lesson's `code/` subfolder:

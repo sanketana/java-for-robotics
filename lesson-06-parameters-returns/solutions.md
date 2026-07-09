@@ -158,3 +158,49 @@ Great job, winners!
 ```
 
 (Your divider length depends on the width you chose in the fix.)
+
+## Stretch Project — Sample Solution
+
+Try it yourself first. `ScoreCalculator.java`:
+
+```java
+public class ScoreCalculator {
+    public static void main(String[] args) {
+        int auto = phaseScore(2, 1);
+        int teleop = phaseScore(5, 3);
+        int total = addScores(auto, teleop);
+
+        System.out.println("Autonomous score: " + auto);
+        System.out.println("TeleOp score: " + teleop);
+        System.out.println("Total score: " + total);
+        System.out.println("Higher phase: " + higher(auto, teleop));
+    }
+
+    public static int phaseScore(int cones, int beacons) {
+        return cones * 3 + beacons * 5;
+    }
+
+    public static int addScores(int a, int b) {
+        return a + b;
+    }
+
+    public static int higher(int a, int b) {
+        if (a > b) {
+            return a;
+        } else {
+            return b;
+        }
+    }
+}
+```
+
+Output:
+
+```
+Autonomous score: 11
+TeleOp score: 30
+Total score: 41
+Higher phase: 30
+```
+
+The key move: `auto` and `teleop` are values *returned* by `phaseScore`, and they're then passed straight into `addScores` and `higher`. One method's output becomes another's input — that's composition, and it's the whole reason return values matter.

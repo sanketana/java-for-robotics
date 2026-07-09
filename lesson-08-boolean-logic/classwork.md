@@ -116,6 +116,18 @@ Write your answers:
 2. Why is `buttonHeld && !armAtTop` easier to read than nesting one `if` inside another?
 3. A method `isInRange` returns a `boolean`. How is that like a Scratch hexagon ("reporter") block?
 
+## Stretch Project (Optional)
+
+Finished your safety guard early? Combine several true/false checks into one overall decision — the way a real robot decides whether it's cleared to start a match.
+
+**Pre-Match Safety Check.** Write a new program, `PreMatchCheck.java`, that decides whether the robot is `clearedToStart`. Write two boolean-returning helper methods:
+- `boolean isBatteryOk(int voltage)` — true when voltage is at least 11.
+- `boolean sensorsReady(boolean camera, boolean imu)` — true only when **both** sensors are online (`&&`).
+
+In `main`, set up the robot's state, then build one combined boolean with `&&`: the robot is cleared only if the battery is OK **and** the arm is stowed **and** the sensors are ready. Print each check and the final verdict, and use `!` to print a `HOLD:` warning when it's *not* cleared.
+
+A worked version is in `solutions.md` — try it yourself first.
+
 ## Starter Materials
 
 These files are in this lesson's `code/` subfolder:

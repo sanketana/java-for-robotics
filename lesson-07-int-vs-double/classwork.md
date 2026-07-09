@@ -132,6 +132,19 @@ Write your answers:
 2. Why was today's bug more dangerous than the bugs in the last two lessons?
 3. `double half = 1 / 2;` stores `0.0`. Explain, in your own words, why declaring the variable a `double` wasn't enough.
 
+## Stretch Project (Optional)
+
+Done early? Build a calculator where **every** answer is a decimal — so every method is a trap waiting to happen if you forget today's lesson.
+
+**Robot Speed Calculator.** Write a new program, `SpeedCalculator.java`, with three `double`-returning methods:
+- `double speed(int distance, int seconds)` — distance divided by time (cm per second).
+- `double gearRatio(int drivenTeeth, int driverTeeth)` — one gear's teeth divided by another's.
+- `double averageLap(int lap1, int lap2, int lap3)` — the average of three lap times.
+
+Each one divides `int` inputs, so each one must protect its decimals (the `.0` or `(double)` trick). Call them from `main` with values like `speed(100, 8)` and confirm you get `12.5`, not `12`. If any answer comes out whole when it shouldn't, the integer-division trap has bitten you.
+
+A worked version is in `solutions.md` — try it yourself first.
+
 ## Starter Materials
 
 These files are in this lesson's `code/` subfolder:

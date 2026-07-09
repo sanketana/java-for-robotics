@@ -70,3 +70,45 @@ What each error message said, and the fix:
 1. **`error: incompatible types: int cannot be converted to boolean`** — the condition used a single `=` (`temperature = 40`), which tries to *assign* instead of *compare*. A condition needs a true/false answer, so it must be `==`. This is the trap from class.
 2. **`error: ';' expected`** — the `println("Motor is overheating!")` line was missing its semicolon. Added `;`.
 3. **`error: cannot find symbol` (pointing at `temperatur`)** — the last line used `temperatur`, but the variable is spelled `temperature`. Names must match exactly.
+
+## Stretch Project — Sample Solution
+
+Try it yourself first. `MatchPhase.java`:
+
+```java
+import java.util.Scanner;
+
+public class MatchPhase {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Seconds elapsed: ");
+        int seconds = scanner.nextInt();
+
+        if (seconds < 0) {
+            System.out.println("Match hasn't started yet.");
+        } else if (seconds < 30) {
+            System.out.println("Phase: Autonomous");
+        } else if (seconds < 120) {
+            System.out.println("Phase: Driver-Controlled");
+        } else if (seconds <= 150) {
+            System.out.println("Phase: Endgame");
+        } else {
+            System.out.println("Match over.");
+        }
+    }
+}
+```
+
+Sample runs (the number is what you type):
+
+| Seconds | Output |
+|---|---|
+| `5` | Phase: Autonomous |
+| `29` | Phase: Autonomous |
+| `30` | Phase: Driver-Controlled |
+| `120` | Phase: Endgame |
+| `150` | Phase: Endgame |
+| `151` | Match over. |
+| `-5` | Match hasn't started yet. |
+
+The `else if` chain checks top to bottom and stops at the first true test — so each branch only needs to test the *upper* edge of its range, exactly like the `DistanceZone` trick from class.

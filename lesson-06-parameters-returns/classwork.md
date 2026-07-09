@@ -136,6 +136,19 @@ Write your answers:
 2. In your own words, what does the word `return` do?
 3. Name a Scratch reporter block you've used (for example, a maths or sensing block). How is it like a Java method with a return type?
 
+## Stretch Project (Optional)
+
+Finished the area calculator early? Build a small toolbox of methods that take inputs, return answers, and even **feed their answers into each other** — the composition idea at the heart of today's lesson.
+
+**Match Score Calculator.** In this game each cone scores 3 points and each beacon scores 5. Write a new program, `ScoreCalculator.java`, with these methods:
+- `int phaseScore(int cones, int beacons)` — returns the points for one phase.
+- `int addScores(int a, int b)` — returns two phase scores added together.
+- `int higher(int a, int b)` — returns the larger of two scores.
+
+In `main`, work out an autonomous score and a teleop score with `phaseScore`, then pass **those returned values** into `addScores` to get the total, and into `higher` to find the bigger phase. Print all four numbers.
+
+A worked version is in `solutions.md` — try it yourself first.
+
 ## Starter Materials
 
 These files are in this lesson's `code/` subfolder:

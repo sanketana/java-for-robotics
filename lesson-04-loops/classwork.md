@@ -124,6 +124,20 @@ Write your answers:
 2. In `DriveToTarget`, why did the position overshoot the target? What would make it stop closer?
 3. Give one example of a job for a `for` loop and one for a `while` loop, and say why each fits.
 
+## Stretch Project (Optional)
+
+Finished `DriveToTarget` early? Extend it into a fuller driving program that uses **both** loop types and keeps a running count. It uses only today's tools — a `for` loop, a `while` loop, and a counter.
+
+**Drive with a step counter.** Write a new program, `DriveSteps.java`, that:
+1. Uses a `for` loop to print a `3 · 2 · 1 · GO!` countdown before moving.
+2. Reads a target distance and a step size (use `Scanner`).
+3. Uses a `while` loop to drive forward one step at a time, printing the position after each step **and counting how many steps it took**.
+4. After the loop, prints a summary line: `Reached 40 cm in 4 steps.`
+
+Test it with a target that divides evenly by the step (like `40` and `10`) and one that doesn't (like `35` and `10`) — notice the overshoot, just like in class.
+
+A worked version is in `solutions.md` — try it yourself first.
+
 ## Starter Materials
 
 These files are in this lesson's `code/` subfolder:

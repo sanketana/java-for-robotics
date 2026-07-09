@@ -145,6 +145,20 @@ Write your answers:
 2. In `DistanceZone`, why does the middle branch only need `distance < 30.0` and not also `distance >= 10.0`?
 3. Describe a decision a real robot might make, and write the `if` condition for it.
 
+## Stretch Project (Optional)
+
+If you finish the distance classifier with time to spare, take on this bigger build. It uses only what you learned today — comparison operators and an `else if` chain — but with more branches and a real robotics scenario.
+
+**Match Phase Announcer.** An FTC match lasts 150 seconds and moves through phases:
+- `0`–`29` s — **Autonomous** (the robot runs on its own)
+- `30`–`119` s — **Driver-Controlled**
+- `120`–`150` s — **Endgame**
+- after `150` s — the match is **over**
+
+Write a new program, `MatchPhase.java`, that reads the number of seconds elapsed (use `Scanner`, like Lesson 2) and prints the current phase. Add a friendly case for a negative number ("Match hasn't started yet."). Test the boundaries on purpose: `0`, `29`, `30`, `120`, `150`, `151`, `-5`.
+
+A worked version is in `solutions.md` — try it yourself first.
+
 ## Starter Materials
 
 These files are in this lesson's `code/` subfolder:

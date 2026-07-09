@@ -71,3 +71,65 @@ What each error message said, and the fix:
 1. **`error: cannot find symbol` (pointing at `greets`)** — `main` called `greets()`, but the method is named `greet()`. Names must match exactly.
 2. **`error: non-static method countdown() cannot be referenced from a static context`** — `countdown()` was declared `public void`, missing `static`. Since `main` is static and there's no object, custom blocks need `static` too. Changed it to `public static void countdown()`.
 3. **`error: ';' expected`** — the `System.out.println(i)` line inside the loop was missing its semicolon. Added `;`.
+
+## Stretch Project — Sample Solution
+
+Try it yourself first. `RobotDashboard.java`:
+
+```java
+public class RobotDashboard {
+    public static void main(String[] args) {
+        printHeader();
+        printBatteryStatus();
+        printMotorStatus();
+        printSensorStatus();
+        printFooter();
+    }
+
+    public static void printDivider() {
+        System.out.println("------------------------------");
+    }
+
+    public static void printHeader() {
+        printDivider();
+        System.out.println("        SANKETANA BOT");
+        System.out.println("        System Report");
+        printDivider();
+    }
+
+    public static void printBatteryStatus() {
+        System.out.println("Battery : 12.4 V  [OK]");
+    }
+
+    public static void printMotorStatus() {
+        System.out.println("Motors  : 4 online [OK]");
+    }
+
+    public static void printSensorStatus() {
+        System.out.println("Sensors : 2 online [OK]");
+    }
+
+    public static void printFooter() {
+        printDivider();
+        System.out.println("       Ready to deploy");
+        printDivider();
+    }
+}
+```
+
+Output:
+
+```
+------------------------------
+        SANKETANA BOT
+        System Report
+------------------------------
+Battery : 12.4 V  [OK]
+Motors  : 4 online [OK]
+Sensors : 2 online [OK]
+------------------------------
+       Ready to deploy
+------------------------------
+```
+
+`main` reads like a table of contents, and `printDivider()` is written once but used four times (twice inside `printHeader`, twice inside `printFooter`) — change the dashes in one place and every divider updates.

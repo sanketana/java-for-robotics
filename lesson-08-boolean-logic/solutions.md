@@ -137,3 +137,49 @@ Safe to run: true
 Why so short? `60 == 50` is false (no "exactly 50" line), and `60 > 10 && 60 < 50` is false (60 isn't under 50, so no "safe range" line). Only the last line prints. Change `temperature` to `30` and run again — now the "safe range" line correctly appears. That's the proof your `&&` fix works.
 
 The lesson from Bug 3: the compiler checked your *types* and your *returns*, but it cannot know you meant `&&` when you typed `||`. Choosing the right operator is on you — and reading your output is how you catch it.
+
+## Stretch Project — Sample Solution
+
+Try it yourself first. `PreMatchCheck.java`:
+
+```java
+public class PreMatchCheck {
+    public static void main(String[] args) {
+        int voltage = 12;
+        boolean armStowed = true;
+        boolean cameraOnline = true;
+        boolean imuOnline = false;
+
+        boolean cleared = isBatteryOk(voltage)
+                && armStowed
+                && sensorsReady(cameraOnline, imuOnline);
+
+        System.out.println("Battery OK: " + isBatteryOk(voltage));
+        System.out.println("Sensors ready: " + sensorsReady(cameraOnline, imuOnline));
+        System.out.println("Cleared to start: " + cleared);
+
+        if (!cleared) {
+            System.out.println("HOLD: fix the failing check before starting.");
+        }
+    }
+
+    public static boolean isBatteryOk(int voltage) {
+        return voltage >= 11;
+    }
+
+    public static boolean sensorsReady(boolean camera, boolean imu) {
+        return camera && imu;
+    }
+}
+```
+
+Output:
+
+```
+Battery OK: true
+Sensors ready: false
+Cleared to start: false
+HOLD: fix the failing check before starting.
+```
+
+The IMU is offline, so `sensorsReady` returns false. A single false anywhere in a chain of `&&` makes the whole thing false — so the robot is held. Flip `imuOnline` to `true` and re-run: the verdict becomes `true` and the `HOLD` line disappears. That's how a real pre-match check works — everything must pass, or you don't start.
